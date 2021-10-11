@@ -3,14 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SearchFilterComponent } from './components/search-filter/search-filter.component';
+import { SearchPipeComponent } from './components/search-pipe/search-pipe.component';
+import { FilterPipeModule } from 'ng2-nested-search';
+import { FormsModule } from '@angular/forms';
+import { SearchFilterPipe } from './search-filter.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchFilterComponent,
+    SearchPipeComponent,
+    SearchFilterPipe,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FilterPipeModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
