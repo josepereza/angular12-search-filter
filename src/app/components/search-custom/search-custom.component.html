@@ -2,7 +2,7 @@
     <div class="search">
       <h3>Search country by name filter : </h3>
       <input class="form-control searchTerm" type="text" name="searchTerm" placeholder="Filter by country name"
-        [(ngModel)]="searchTerm"  />
+        [(ngModel)]="searchTerm" (input)="search($event)" />
     </div>
   </form>
   
@@ -16,7 +16,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let country of countries | searchFilter: searchTerm; index as i">
+      <tr *ngFor="let country of countries ; index as i">
         <td scope="row">{{ i + 1 }}</td>
         <td>
           <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">

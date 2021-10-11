@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchFilterPipe } from './search-filter.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SearchCustomComponent } from './components/search-custom/search-custom.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     SearchFilterComponent,
     SearchPipeComponent,
     SearchFilterPipe,
-    NavbarComponent
+    NavbarComponent,
+    SearchCustomComponent
   ],
   imports: [
     BrowserModule,

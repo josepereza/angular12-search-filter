@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 interface Country {
   name: string;
   flag: string;
@@ -7,11 +8,11 @@ interface Country {
   population: number;
 }
 @Component({
-  selector: 'app-search-pipe',
-  templateUrl: './search-pipe.component.html',
-  styleUrls: ['./search-pipe.component.scss']
+  selector: 'app-search-custom',
+  templateUrl: './search-custom.component.html',
+  styleUrls: ['./search-custom.component.scss']
 })
-export class SearchPipeComponent implements OnInit {
+export class SearchCustomComponent implements OnInit {
   searchTerm!: any;
   countries!: Country[];
   allCountries!: Country[];
@@ -24,6 +25,8 @@ export class SearchPipeComponent implements OnInit {
       this.allCountries = this.countries;
     });
   }
-  
+  search(event: any): void {
+    this.countries = this.allCountries.filter((val) => val.name.toLowerCase().includes(event.target.value));
+  }
 
 }
